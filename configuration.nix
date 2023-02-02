@@ -65,6 +65,7 @@ in
     firefox-wayland
     rofi
     signal-desktop
+    ranger 
   ];
 
   # Syncthing
