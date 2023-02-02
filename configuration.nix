@@ -4,16 +4,11 @@
 
 { config, pkgs, ... }:
 let
-  #flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-  #hyprland = (import flake-compat {
-#    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
-#  }).defaultNix;
 in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-#      hyprland.nixosModules.default
     ];
 
   # Bootloader.
@@ -48,11 +43,6 @@ in
     xkbVariant = "euro";
   };
 
-  #programs.hyprland = {
-  #  enable = true;
-  #  package = hyprland.packages.${pkgs.system}.default;
-  #};
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ugo = {
     isNormalUser = true;
@@ -74,7 +64,13 @@ in
     git
     firefox-wayland
     rofi
+    signal-desktop
   ];
+
+  # Syncthing
+  services.syncthing = {
+    enable = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
