@@ -73,7 +73,6 @@ in
     ranger 
     swaybg
     swaylock
-    gitg
     git-cola
   ];
 
