@@ -40,11 +40,10 @@ in
   # Configure keymap in X11
   services.xserver = {
     enable = true;
-    windowManager.i3.enable = true;
     displayManager.gdm.enable = true;
     displayManager.defaultSession = "hyprland";
-    synaptics.enable = true;
-    libinput.touchpad.naturalScrolling = true;
+    desktopManager.xfce.enable = true;
+#   synaptics.enable = true;
     layout = "us";
     xkbVariant = "euro";
   };
@@ -74,7 +73,9 @@ in
     ranger 
     swaybg
     swaylock
-    git-cola
+    hugo
+    gnumake
+    trashy
   ];
 
   security.pam.services.swaylock = {
@@ -89,6 +90,13 @@ in
     user = "ugo";
     dataDir = "/home/ugo/Documents";    # Default folder for new synced folders
     configDir = "/home/ugo/.config/syncthing";
+  };
+  # Syncthing ports
+  networking.firewall.allowedTCPPorts = [ 8384 22000];
+  networking.firewall.allowedUDPPorts = [ 22000 21027];
+
+  environment.variables = {
+    EDITOR = "vim";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
