@@ -44,6 +44,7 @@ in
     displayManager.gdm.enable = true;
     displayManager.defaultSession = "hyprland";
     synaptics.enable = true;
+    libinput.touchpad.naturalScrolling = true;
     layout = "us";
     xkbVariant = "euro";
   };
@@ -75,6 +76,12 @@ in
     swaylock
     git-cola
   ];
+
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
 
   # Syncthing
   services.syncthing = {
