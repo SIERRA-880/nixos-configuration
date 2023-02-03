@@ -12,9 +12,14 @@ in
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
+  # Setup keyfile
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -66,11 +71,18 @@ in
     rofi
     signal-desktop
     ranger 
+    swaybg
+    swaylock
+    gitg
+    git-cola
   ];
 
   # Syncthing
   services.syncthing = {
     enable = true;
+    user = "ugo";
+    dataDir = "/home/ugo/Documents";    # Default folder for new synced folders
+    configDir = "/home/ugo/.config/syncthing";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
