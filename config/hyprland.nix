@@ -1,7 +1,8 @@
 { wayland.windowManager.hyprland = {
 
   enable = true;
-  extraConfig = ''
+  extraConfig = 
+  ''
     # See https://wiki.hyprland.org/Configuring/Monitors/
     #monitor=eDP-1,1920x1080@60,0x0,1
     monitor=eDP-1,1920x1080@60,0x1080,1
@@ -129,13 +130,18 @@
     $mainMod = SUPER
     
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-    bind = $mainMod SHIFT, L, exec, swaylock -c 000000
+    bind = $mainMod SHIFT, L, exec, bash /etc/nixos/scripts/lock.sh
     bind = $mainMod, Return, exec, kitty
     bind = $mainMod, D, exec, rofi -show drun 
     bind = $mainMod, S, exec, rofi -show ssh 
     bind = $mainMod SHIFT, Q, killactive, 
     bind = $mainMod, F, fullscreen, 
     bind = $mainMod SHIFT, M, exit,
+    bind = $mainMod, Print, exec, shotman --capture region --copy
+    bind = , XF86MonBrightnessUp, exec, brightnessctl set +10%
+    bind = , XF86MonBrightnessDown, exec, brightnessctl set 10%-
+    bind = , XF86AudioRaiseVolume, exec, amixer sset Master 5%+
+    bind = , XF86AudioLowerVolume, exec, amixer sset Master 5%-
     
     # Move focus with mainMod + arrow keys
     bind = $mainMod, H, movefocus, l
@@ -174,5 +180,8 @@
     # Move/resize windows with mainMod + LMB/RMB and dragging
     bindm = $mainMod, mouse:272, movewindow
     bindm = $mainMod, mouse:273, resizewindow
+
+    # Lock when closing lid
+    bindl = , switch:on:Lid Switch, exec, bash /etc/nixos/scripts/lock.sh
   '';
 };}

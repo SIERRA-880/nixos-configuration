@@ -11,11 +11,23 @@ in {
     ./config/waybar.nix
   ];
 
-  #wayland.windowManager.hyprland.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   home.username = "ugo";
   home.homeDirectory = "/home/ugo";
   home.stateVersion = "23.05";
+
+  home.packages = with pkgs; [
+    brightnessctl
+    ranger
+    caprine-bin
+    obsidian
+    cura
+    prusa-slicer
+    freecad
+    openscad
+    freetube
+  ];
 
   programs.chromium.enable = true;
 

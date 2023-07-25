@@ -23,7 +23,7 @@
     "/crypto_keyfile.bin" = null;
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "ugo-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -38,9 +38,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
-
-  # Hyprland
-  #programs.hyprland.enable = true;
 
   # Fix swaylock wrong password
   security.pam.services.swaylock = {};
@@ -69,17 +66,15 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ugo = {
     isNormalUser = true;
     description = "Ugo Proietti";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
       rofi
       swaylock
+      swayidle
       kitty
       bitwarden
       librewolf
@@ -91,17 +86,19 @@
       shotman
       trash-cli
       vlc
+      parted
+      gparted
     ];
   };
+
+  programs.dconf.enable = true;
+  virtualisation.libvirtd.enable = true;
 
   # Home Manager
   home-manager = {
     useUserPackages = true;
     users.ugo = import ./home.nix;
   };
-
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
   services.syncthing = {
     enable = true;
@@ -122,6 +119,7 @@
     vim
     btop
     neofetch
+    virt-manager
   ];
 
   # Font
