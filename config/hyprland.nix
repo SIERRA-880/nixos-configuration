@@ -10,8 +10,13 @@
       monitor=,preferred,auto,1
       
       # Execute your favorite apps at launch
-      exec-once = swaybg --image /etc/nixos/hyprland/wallpaper.jpg -o*
+      exec-once = swaybg --image /etc/nixos/hyprland/wallpaper.png -o*
       exec-once = waybar 
+
+      misc {
+        # Remove ultra cringe anime wallpaper
+        force_default_wallpaper = 0
+      }
       
       # Window type
       windowrule = float, rofi
@@ -51,7 +56,7 @@
       
 	  rounding = 1
 	  active_opacity = 1
-	  inactive_opacity = 0.9
+	  inactive_opacity = 0.85
       
 	  drop_shadow = yes
 	  shadow_range = 4
@@ -108,10 +113,12 @@
       bind = , Print, exec, grim -g "$(slurp -d)" - | wl-copy
      
       # Volume control
-      bind = , XF86MonBrightnessUp, exec, brightnessctl set +10%
-      bind = , XF86MonBrightnessDown, exec, brightnessctl set 10%-
       bind = , XF86AudioRaiseVolume, exec, amixer sset Master 5%+
       bind = , XF86AudioLowerVolume, exec, amixer sset Master 5%-
+      bind = , XF86AudioMute, exec, pw-volume mute toggle
+      
+      bind = , XF86MonBrightnessUp, exec, brightnessctl set +10%
+      bind = , XF86MonBrightnessDown, exec, brightnessctl set 10%-
       
       # Move focus with mainMod + arrow keys
       bind = $mainMod, H, movefocus, l

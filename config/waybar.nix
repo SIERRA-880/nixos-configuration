@@ -7,7 +7,7 @@
       mainBar = {
 	layer = "top";
 	position = "top";
-	height = 20;
+	height = 30;
 	modules-left =  ["hyprland/workspaces"]; 
 	modules-center = ["clock"];
 	modules-right = ["temperature" "network" "battery"];
@@ -29,11 +29,11 @@
 	  "max-length"= 50;
 	};
 	"battery"= {
-	  "format"= "{capacity}% {icon}";
-	  "format-icons"= ["" "" "" "" ""];
+	  "format"= "{capacity}%  󰁾";
+          "format-plugged"= "{capacity}% ";
 	};
 	"clock"= {
-	  "format-alt"= "{:%a, %d. %b  %H:%M}";
+	  "format"= "{:%R    %d/%m }";
 	};
       };
     };

@@ -11,8 +11,16 @@
   home.stateVersion = "23.05";
 
   home.packages = with pkgs; [
-    chromium
+    bat
+    brightnessctl
+    firefox
+    freecad
+    logseq
+    openscad
+    prusa-slicer
+    pw-volume
     signal-desktop
+    trash-cli
   ];
 
   home.pointerCursor = {
@@ -20,5 +28,12 @@
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
     size = 18;
+  };
+
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      ls="ls -lah";
+    };
   };
 }
