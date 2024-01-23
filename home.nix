@@ -15,6 +15,7 @@
     brightnessctl
     firefox
     freecad
+    gparted
     logseq
     openscad
     prusa-slicer
