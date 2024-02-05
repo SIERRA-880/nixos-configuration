@@ -109,7 +109,8 @@
       bind = $mainMod, M, exit
       bind = $mainMod, Q, killactive
       bind = $mainMod, F, fullscreen
-      bind = $mainMod, Return, exec, wofi --show drun -Dkey_expand=Tab
+      # bind = $mainMod, Return, exec, wofi --show drun -Dkey_expand=Tab
+      bind = $mainMod, Return, exec, wofi
       bind = , Print, exec, grim -g "$(slurp -d)" - | wl-copy
      
       # Volume control

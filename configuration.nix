@@ -51,7 +51,7 @@
   users.users.ugo = {
     isNormalUser = true;
     description = "Ugo Proietti";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout"];
     packages = with pkgs; [
     ];
   };
@@ -98,7 +98,6 @@
     vim
     wl-clipboard
     wget
-    wofi
   ];
 
   # Font

@@ -4,6 +4,7 @@
   imports = [
     ./config/hyprland.nix
     ./config/waybar.nix
+    ./config/wofi.nix
   ];
 
   home.username = "ugo";
@@ -13,13 +14,18 @@
   home.packages = with pkgs; [
     bat
     brightnessctl
+    caprine-bin
+    element
     firefox
     freecad
     gparted
+    keepassxc
     logseq
     openscad
+    pdfarranger
     prusa-slicer
     pw-volume
+    qbittorrent
     signal-desktop
     trash-cli
   ];
