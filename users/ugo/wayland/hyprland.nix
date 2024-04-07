@@ -5,12 +5,13 @@
     extraConfig = 
       ''
       # See https://wiki.hyprland.org/Configuring/Monitors/
-      #monitor=eDP-1,1920x1080@60,0x1080,1
-      #monitor=DP-1,1920x1018@60,0x0,1
       monitor=,preferred,auto,1
+      # monitor=eDP-1,1920x1080,0x0
+      # monitor=DP-2,1920x1080,1920x0
       
       # Execute your favorite apps at launch
-      exec-once = swaybg --image /etc/nixos/hyprland/wallpaper.png -o*
+      exec-once = swaybg --image wallpaper.png -o*
+      # exec-once = hyprpaper
       exec-once = waybar 
 
       misc {
@@ -105,13 +106,15 @@
       # https://wiki.hyprland.org/Configuring/Keywords/ for more
       $mainMod = SUPER
       
+      bind = $mainMod, L, exec, hyprlock
+
       # Binds, https://wiki.hyprland.org/Configuring/Binds/
       bind = $mainMod, M, exit
       bind = $mainMod, Q, killactive
       bind = $mainMod, F, fullscreen
       # bind = $mainMod, Return, exec, wofi --show drun -Dkey_expand=Tab
       bind = $mainMod, Return, exec, wofi
-      bind = , Print, exec, grim -g "$(slurp -d)" - | wl-copy
+      bind = , Print, exec, grim -g "$(slurp -d)"
      
       # Volume control
       bind = , XF86AudioRaiseVolume, exec, amixer sset Master 5%+

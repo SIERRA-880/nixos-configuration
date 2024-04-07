@@ -1,16 +1,18 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
-      <home-manager/nixos>
-      ./config/syncthing.nix
+      ./programs/syncthing.nix
+      ./programs/tlp.nix
     ];
+
+  # Nix flakes
+  nix.package = pkgs.nixFlakes;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -27,11 +29,11 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "euro";
-  };
+  # # Configure keymap in X11
+  # services.xserver = {
+  #   layout = "us";
+  #   xkbVariant = "euro";
+  # };
 
   # Enable Hyprland desktop manager
   programs.hyprland = {
@@ -47,13 +49,25 @@
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
+  services.udev.packages = with pkgs; [
+    # via
+    vial
+  ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ugo = {
     isNormalUser = true;
     description = "Ugo Proietti";
-    extraGroups = [ "networkmanager" "wheel" "dialout"];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "docker"];
     packages = with pkgs; [
     ];
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "ugo" = import ../users/ugo/home.nix;
+    };
   };
 
   # Enable sound with pipewire
@@ -72,71 +86,41 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-  # Home Manager
-  home-manager = {
-    useUserPackages = true;
-    users.ugo = import ./home.nix;
-  };
-
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "ugo";
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    bat
+    brightnessctl
     btop
     git
     grim
     kitty
     neofetch
+    nodejs
     polkit_gnome
+    ripgrep
     slurp
     swaybg
+    via
+    vial
     vim
     wl-clipboard
     wget
   ];
+
+  environment.variables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 
   # Font
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     google-fonts
   ];
-
-  # Power management
-  # Enable thermald to proactively prevents overheating on Intel CPU.
-  services.thermald.enable = true;
-  # Enable TLP for battery optimization
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-
-      PLATFORM_PROFILE_ON_AC= "performance";
-      PLATFORM_PROFILE_ON_BAT= "low-power";
-
-      CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 0;
-
-      CPU_HWP_DYN_BOOST_ON_AC = 1;
-      CPU_HWP_DYN_BOOST_ON_BAT = 0;
-
-      CPU_MIN_PERF_ON_AC = 0;
-      CPU_MAX_PERF_ON_AC = 100;
-      CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 20;
-
-      START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
-      STOP_CHARGE_THRESH_BAT0 = 85; # 80 and above it stops charging
-    };
-  };
 
   security.polkit.enable = true;
 
@@ -155,6 +139,8 @@
       };
     };
   };
+
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "23.11";
 
