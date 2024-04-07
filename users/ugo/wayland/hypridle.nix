@@ -1,5 +1,7 @@
+{inputs, ...}:
+
 {
-  # screen idle
+  imports = [ inputs.hypridle.homeManagerModules.default ];
   services.hypridle = {
     enable = true;
 

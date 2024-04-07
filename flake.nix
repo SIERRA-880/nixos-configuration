@@ -10,6 +10,8 @@
     };
 
     hyprlock.url = "github:hyprwm/hyprlock";
+    hypridle.url = "github:hyprwm/hypridle";
+    hyprpaper.url = "github:hyprwm/hyprpaper";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -18,8 +20,6 @@
       modules = [
         ./system/configuration.nix
         inputs.home-manager.nixosModules.default
-        # ./users/ugo/wayland/hyprlock.nix
-        # inputs.hyprlock.homeManagerModules.default
       ];
     };
   };

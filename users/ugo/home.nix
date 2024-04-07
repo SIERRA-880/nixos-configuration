@@ -5,8 +5,9 @@
     ./wayland/hyprland.nix
     ./wayland/waybar.nix
     ./wayland/wofi.nix
-    # ./wayland/hyprlock.nix
-    # ./wayland/hypridle.nix
+    ./wayland/hyprlock.nix
+    ./wayland/hypridle.nix
+    # ./wayland/hyprpaper.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
