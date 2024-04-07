@@ -5,7 +5,7 @@
     ./wayland/hyprland.nix
     ./wayland/waybar.nix
     ./wayland/wofi.nix
-    ./wayland/hyprlock.nix
+    # ./wayland/hyprlock.nix
     # ./wayland/hypridle.nix
   ];
 
