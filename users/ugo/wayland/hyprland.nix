@@ -10,8 +10,8 @@
       # monitor=DP-2,1920x1080,1920x0
       
       # Execute your favorite apps at launch
-      exec-once = swaybg --image wallpaper.png -o*
-      # exec-once = hyprpaper
+      # exec-once = swaybg --image wallpaper.png -o*
+      exec-once = hyprpaper
       exec-once = waybar 
 
       misc {
