@@ -106,7 +106,7 @@
       # https://wiki.hyprland.org/Configuring/Keywords/ for more
       $mainMod = SUPER
       
-      bind = $mainMod, L, exec, hyprlock
+      # bind = $mainMod, L, exec, hyprlock
 
       # Binds, https://wiki.hyprland.org/Configuring/Binds/
       bind = $mainMod, M, exit

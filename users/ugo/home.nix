@@ -28,7 +28,7 @@
     gparted
     inkscape
     libreoffice
-    logseq
+    # logseq
     neovim
     openscad
     pdfarranger

@@ -2,13 +2,32 @@
 
 {
   imports = [ inputs.hyprlock.homeManagerModules.default ];
+
+  # wayland.windowManager.hyprland = {
+  #   settings = {
+  #     bind = [ "$mainMod SHIFT, E, exec, hyprlock" ];
+  #   };
+  # };
+
   programs.hyprlock = {
     enable = true;
 
+    general = {
+      disable_loading_bar = true;
+      grace = 5;
+    };
+
+    backgrounds = [
+      {
+        monitor = "";
+        path = "screenshot";
+        blur_passes = 3;
+        vibrancy = 0.3;
+      }
+    ];
+
     input-fields = [
       {
-        monitor = "eDP-1";
-
         size = {
           width = 400;
           height = 50;
@@ -28,6 +47,7 @@
         monitor = "eDP-1";
         text = "$TIME";
         font_size = 50;
+        color = "rgb(127, 127, 127)";
 
         position = {
           x = 0;
