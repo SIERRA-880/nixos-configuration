@@ -1,4 +1,4 @@
-{inputs, config, ...}:
+{inputs, config, lib, pkgs, ...}:
 
 {
   imports = [ inputs.hypridle.homeManagerModules.default ];
@@ -7,13 +7,14 @@
 
     listeners = [
       {
-        timeout = 5;
-        onTimeout = "hyprlock";
+        timeout = 60;
+        onTimeout = "${lib.getExe pkgs.hyprlock}";
+        onResume = "echo 'I can use echo'";
       }
       {
-        timeout = 10;
-        onTimeout = "hyprctl dispatch dpms off";
-        onResume = "hyprctl dispatch dpms on";
+        timeout = 120;
+        onTimeout = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms off";
+        onResume = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms on";
       }
     ];
   };
