@@ -1,4 +1,4 @@
-{inputs, ...}:
+{inputs, config, ...}:
 
 {
   imports = [ inputs.hyprlock.homeManagerModules.default ];
@@ -39,6 +39,15 @@
 
         dots_spacing = 0.3;
         dots_center = true;
+
+        outer_color = "rgba(#${config.colorScheme.palette.base00}FF)";
+        inner_color = "rgba(#${config.colorScheme.palette.base00}FF)";
+        font_color = "rgba(#${config.colorScheme.palette.base00}FF)";
+
+        placeholder_text = "ouistiti";
+
+        check_color = "rgba(#${config.colorScheme.palette.base09}FF)";
+        fail_color = "rgba(#${config.colorScheme.palette.base08}FF)";
       }
     ];
 
@@ -47,7 +56,7 @@
         monitor = "eDP-1";
         text = "$TIME";
         font_size = 50;
-        color = "rgb(127, 127, 127)";
+        color = "rgb(#${config.colorScheme.palette.base06})";
 
         position = {
           x = 0;

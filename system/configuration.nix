@@ -70,6 +70,11 @@
     };
   };
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+  };
+
   # Enable sound with pipewire
   sound.enable = true;
   security.rtkit.enable = true;

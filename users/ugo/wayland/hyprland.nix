@@ -1,3 +1,5 @@
+{ config, ... }:
+
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -45,9 +47,9 @@
       
 	  gaps_in = 5
 	  gaps_out = 10
-	  border_size = 2
-	  col.active_border = rgba(0000ffff) rgba(ffffffff) 45deg
-	  col.inactive_border = rgba(ff0000ff) rgba(ffffffff) 45deg
+	  border_size = 3
+	  col.active_border = rgba(${config.colorScheme.colors.base00}ff) rgba(${config.colorScheme.colors.base01}ff) 45deg
+	  col.inactive_border = rgba(${config.colorScheme.colors.base08}ff) rgba(${config.colorScheme.colors.base09}ff) 45deg
       
 	  layout = dwindle
       }
