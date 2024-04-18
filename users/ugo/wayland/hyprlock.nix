@@ -21,8 +21,8 @@
       {
         monitor = "";
         path = "screenshot";
-        blur_passes = 3;
-        vibrancy = 0.3;
+        blur_passes = 1;
+        # vibrancy = 0.3;
       }
     ];
 
@@ -40,14 +40,14 @@
         dots_spacing = 0.3;
         dots_center = true;
 
-        outer_color = "rgba(#${config.colorScheme.palette.base00}FF)";
-        inner_color = "rgba(#${config.colorScheme.palette.base00}FF)";
-        font_color = "rgba(#${config.colorScheme.palette.base00}FF)";
+        outer_color = "rgb(${config.colorScheme.palette.base00})";
+        inner_color = "rgb(${config.colorScheme.palette.base01})";
+        font_color = "rgb(${config.colorScheme.palette.base06})";
 
-        placeholder_text = "ouistiti";
+        placeholder_text = "";
 
-        check_color = "rgba(#${config.colorScheme.palette.base09}FF)";
-        fail_color = "rgba(#${config.colorScheme.palette.base08}FF)";
+        check_color = "rgb(${config.colorScheme.palette.base0B})";
+        fail_color = "rgb(${config.colorScheme.palette.base08})";
       }
     ];
 
@@ -56,7 +56,7 @@
         monitor = "eDP-1";
         text = "$TIME";
         font_size = 50;
-        color = "rgb(#${config.colorScheme.palette.base06})";
+        color = "rgb(${config.colorScheme.palette.base06})";
 
         position = {
           x = 0;

@@ -13,27 +13,27 @@
         modules-right = ["cpu" "memory" "network" "battery"];
         "cpu"= {
           "interval"=10;
-          "format"="{usage:02}%  ";
+          "format"="{usage:02}%   ";
         };
         "memory" = {
           "interval" = 10;
-          "format" = "{}%  ";
+          "format" = "{}%   ";
         };
         "network"= {
           "interface"= "wlp0s20f3";
-          "format"= "{ifname}";
-          "format-wifi"= "{essid} ({signalStrength}%)  ";
-          "format-ethernet"= "{ifname}  ";
-          "format-disconnected"= " ";
+          # "format"= "{ifname}";
+          "format-wifi"= "{essid}   ";
+          # "format-ethernet"= "{ifname}  ";
+          # "format-disconnected"= "  ";
           "tooltip-format"= "{ifname}";
-          "tooltip-format-wifi"= "{essid} ({signalStrength}%) ";
-          "tooltip-format-ethernet"= "{ifname}  ";
+          "tooltip-format-wifi"= "{essid}({signalStrength}%)";
+          "tooltip-format-ethernet"= "{ifname}  ";
           "tooltip-format-disconnected"= "Disconnected";
           "max-length"= 50;
         };
         "battery"= {
-          "format"= "{capacity}%  󰁾";
-          "format-plugged"= "{capacity}% ";
+          "format"= "{capacity}% 󰁾";
+          "format-plugged"= "{capacity}% 󰁾";
         };
         "clock"= {
           "format"= "{:%R    %d/%m  }";
@@ -51,7 +51,6 @@
       }
 
       .modules-right {
-        padding-right: 10px;
         margin-right: 10px;
       }
 
