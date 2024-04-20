@@ -45,6 +45,7 @@
     element-desktop
     feh
     firefox
+    flameshot
     freecad
     gimp
     gparted
