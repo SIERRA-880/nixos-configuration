@@ -66,6 +66,20 @@
         valign = "center";
         halign = "center";
       }
+      {
+        monitor = "HDMI-A-1";
+        text = "$TIME";
+        font_size = 50;
+        color = "rgb(${config.colorScheme.palette.base06})";
+
+        position = {
+          x = 0;
+          y = 80;
+        };
+
+        valign = "center";
+        halign = "center";
+      }
     ];
   };
 }
