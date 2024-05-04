@@ -87,26 +87,21 @@
     enable = true;
   };
 
-  # programs.sftpman = {
-  #   enable = true;
-  #   mounts.anvil = {
-  #     host = "anvil.ozalid.be";
-  #     user = "ugo";
-  #     authType = "publickey";
-  #     sshKey = "/home/ugo/.ssh/id_rsa.pub";
-  #     mountPoint = "/home/ugo/";
-  #   };
-  #   mounts.bookshelf = {
-  #     host = "bookshelf.ozalid.be";
-  #     user = "ugo";
-  #     authType = "publickey";
-  #     sshKey = "/home/ugo/.ssh/id_rsa.pub";
-  #     mountPoint = "~";
-  #   };
-  # };
-
-  # programs.texlive ={
-  #   enable = true;
-  #   package = "scheme-full";
-  # };
+  programs.sftpman = {
+    enable = true;
+    mounts.anvil = {
+      host = "anvil.ozalid.be";
+      user = "ugo";
+      authType = "publickey";
+      sshKey = "/home/ugo/.ssh/id_rsa";
+      mountPoint = "/";
+    };
+    mounts.chest = {
+      host = "192.168.1.31";
+      user = "ugo";
+      authType = "publickey";
+      sshKey = "/home/ugo/.ssh/id_rsa";
+      mountPoint = "/";
+    };
+  };
 }

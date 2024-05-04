@@ -33,7 +33,7 @@
         };
         "battery"= {
           "format"= "{capacity}% 󰁾";
-          "format-plugged"= "{capacity}% 󰁾";
+          "format-plugged"= "{capacity}% ";
         };
         "clock"= {
           "format"= "{:%R    %d/%m  }";

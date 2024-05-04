@@ -45,6 +45,8 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk];
 
+  services.tailscale.enable = true;
+
   # Fish
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
