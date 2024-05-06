@@ -104,7 +104,7 @@
     btop
     git
     grim
-    kitty
+    # kitty
     neofetch
     nodejs
     polkit_gnome

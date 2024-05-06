@@ -9,7 +9,7 @@
     ./wayland/hypridle.nix
     ./wayland/hyprpaper.nix
 
-    # ./programs/kitty.nix
+    ./programs/kitty.nix
 
     inputs.nix-colors.homeManagerModules.default
   ];
@@ -103,5 +103,11 @@
       sshKey = "/home/ugo/.ssh/id_rsa";
       mountPoint = "/";
     };
+  };
+
+  programs.git = {
+    enable = true;
+    userEmail = "ugo.pr@protonmail.com";
+    userName = "Ugo Proietti";
   };
 }
