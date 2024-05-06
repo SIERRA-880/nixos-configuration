@@ -90,7 +90,8 @@
         "$mainMod, XF86AudioMute, exec, pw-volume mute toggle"
         "$mainMod, XF86MonBrightnessUp, exec, brightnessctl set +10%"
         "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 10%-"
-        ", Print, exec, grim -g \"$(slurp -d)\""
+        ", Print, exec, grim -g \"$(slurp -d)\" - | wl-copy --type image/png"
+        "SHIFT, Print, exec, pushd ~/Downloads/ ; grim -g \"$(slurp -d)\" ; popd"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
