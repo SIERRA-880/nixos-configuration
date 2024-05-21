@@ -72,6 +72,8 @@
     };
   };
 
+  home-manager.backupFileExtension = "backup";
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -104,7 +106,7 @@
     btop
     git
     grim
-    # kitty
+    kitty
     neofetch
     nodejs
     polkit_gnome
