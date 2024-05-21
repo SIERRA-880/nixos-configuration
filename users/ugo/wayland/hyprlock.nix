@@ -1,7 +1,7 @@
 {inputs, config, ...}:
 
 {
-  imports = [ inputs.hyprlock.homeManagerModules.default ];
+  # imports = [ inputs.hyprlock.homeManagerModules.default ];
 
   # wayland.windowManager.hyprland = {
   #   settings = {
@@ -12,21 +12,21 @@
   programs.hyprlock = {
     enable = true;
 
-    general = {
-      disable_loading_bar = true;
-      grace = 5;
-    };
+    settings = {
+      general = {
+        disable_loading_bar = true;
+        grace = 5;
+      };
 
-    backgrounds = [
+      backgrounds = [
       {
         monitor = "";
         path = "screenshot";
         blur_passes = 1;
-        # vibrancy = 0.3;
       }
-    ];
+      ];
 
-    input-fields = [
+      input-fields = [
       {
         size = {
           width = 400;
@@ -49,9 +49,9 @@
         check_color = "rgb(${config.colorScheme.palette.base0B})";
         fail_color = "rgb(${config.colorScheme.palette.base08})";
       }
-    ];
+      ];
 
-    labels = [
+      labels = [
       {
         monitor = "eDP-1";
         text = "$TIME";
@@ -80,6 +80,7 @@
         valign = "center";
         halign = "center";
       }
-    ];
+      ];
+    };
   };
 }
