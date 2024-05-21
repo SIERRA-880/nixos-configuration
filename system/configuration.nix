@@ -151,9 +151,6 @@
 
   virtualisation.docker.enable = true;
 
-  nix.gc.automatic = true;
-  nix.settings.auto-optimise-store = true;
-
   system.stateVersion = "23.11";
 
 }
