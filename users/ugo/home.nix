@@ -53,7 +53,9 @@
     libreoffice
     # logseq
     neovim
+    nixos-generators
     openscad
+    openstackclient
     pdfarranger
     prusa-slicer
     python3
@@ -62,6 +64,7 @@
     rpi-imager
     sshfs
     signal-desktop
+    terraform
     texlive.combined.scheme-full
     tldr
     trash-cli

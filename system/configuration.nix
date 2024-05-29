@@ -149,7 +149,11 @@
     };
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
 
   nix.gc = {
     automatic = true;  # Enable the automatic garbage collector
@@ -162,5 +166,4 @@
   };
 
   system.stateVersion = "23.11";
-
 }

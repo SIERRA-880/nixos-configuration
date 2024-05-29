@@ -1,8 +1,6 @@
 {inputs, config, ...}:
 
 {
-  # imports = [ inputs.hyprlock.homeManagerModules.default ];
-
   # wayland.windowManager.hyprland = {
   #   settings = {
   #     bind = [ "$mainMod SHIFT, E, exec, hyprlock" ];
@@ -18,7 +16,7 @@
         grace = 5;
       };
 
-      backgrounds = [
+      background = [
       {
         monitor = "";
         path = "screenshot";
@@ -26,7 +24,7 @@
       }
       ];
 
-      input-fields = [
+      input-field = [
       {
         size = {
           width = 400;
@@ -51,7 +49,7 @@
       }
       ];
 
-      labels = [
+      label = [
       {
         monitor = "eDP-1";
         text = "$TIME";
@@ -66,20 +64,20 @@
         valign = "center";
         halign = "center";
       }
-      {
-        monitor = "HDMI-A-1";
-        text = "$TIME";
-        font_size = 50;
-        color = "rgb(${config.colorScheme.palette.base06})";
-
-        position = {
-          x = 0;
-          y = 80;
-        };
-
-        valign = "center";
-        halign = "center";
-      }
+      # {
+      #   monitor = "HDMI-A-1";
+      #   text = "$TIME";
+      #   font_size = 50;
+      #   color = "rgb(${config.colorScheme.palette.base06})";
+      #
+      #   position = {
+      #     x = 0;
+      #     y = 80;
+      #   };
+      #
+      #   valign = "center";
+      #   halign = "center";
+      # }
       ];
     };
   };
