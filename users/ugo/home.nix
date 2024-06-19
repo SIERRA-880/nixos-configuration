@@ -56,6 +56,7 @@
     nixos-generators
     openscad
     openstackclient
+    pavucontrol
     pdfarranger
     prusa-slicer
     python3
@@ -70,6 +71,7 @@
     trash-cli
     vlc
     zathura
+    zed-editor
   ];
 
   home.pointerCursor = {

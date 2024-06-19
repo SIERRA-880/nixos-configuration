@@ -113,6 +113,7 @@
     ripgrep
     slurp
     swaybg
+    unzip
     via
     vial
     vim
