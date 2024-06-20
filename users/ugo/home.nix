@@ -7,7 +7,8 @@
     ./wayland/wofi.nix
     ./wayland/hyprlock.nix
     ./wayland/hypridle.nix
-    ./wayland/hyprpaper.nix
+    ./wayland/hyprpaper/hyprpaper.nix
+    ./wayland/ags/ags.nix
 
     ./programs/kitty.nix
 
@@ -92,23 +93,23 @@
     enable = true;
   };
 
-  programs.sftpman = {
-    enable = true;
-    mounts.anvil = {
-      host = "anvil.ozalid.be";
-      user = "ugo";
-      authType = "publickey";
-      sshKey = "/home/ugo/.ssh/id_rsa";
-      mountPoint = "/";
-    };
-    mounts.chest = {
-      host = "192.168.1.31";
-      user = "ugo";
-      authType = "publickey";
-      sshKey = "/home/ugo/.ssh/id_rsa";
-      mountPoint = "/";
-    };
-  };
+  # programs.sftpman = {
+  #   enable = true;
+  #   mounts.anvil = {
+  #     host = "anvil.ozalid.be";
+  #     user = "ugo";
+  #     authType = "publickey";
+  #     sshKey = "/home/ugo/.ssh/id_rsa";
+  #     mountPoint = "/";
+  #   };
+  #   mounts.chest = {
+  #     host = "192.168.1.31";
+  #     user = "ugo";
+  #     authType = "publickey";
+  #     sshKey = "/home/ugo/.ssh/id_rsa";
+  #     mountPoint = "/";
+  #   };
+  # };
 
   programs.git = {
     enable = true;

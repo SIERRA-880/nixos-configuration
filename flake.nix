@@ -9,10 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # hyprlock.url = "github:hyprwm/hyprlock";
-    # hyprpaper.url = "github:hyprwm/hyprpaper";
-
     nix-colors.url = "github:misterio77/nix-colors";
+    ags.url = "github:Aylur/ags";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {

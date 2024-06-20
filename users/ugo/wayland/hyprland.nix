@@ -10,7 +10,7 @@
 
       exec-once = [
         "waybar"
-        "sftpman mount_all"
+        # "sftpman mount_all"
       ];
 
       input = {
@@ -85,11 +85,11 @@
         "$mainMod, F, fullscreen"
         "$mainMod, Return, exec, wofi"
 
-        "$mainMod, XF86AudioRaiseVolume, exec, amixer sset Master 5%+"
-        "$mainMod, XF86AudioLowerVolume, exec, amixer sset Master 5%-"
-        "$mainMod, XF86AudioMute, exec, pw-volume mute toggle"
-        "$mainMod, XF86MonBrightnessUp, exec, brightnessctl set +10%"
-        "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 10%-"
+        ", XF86AudioRaiseVolume, exec, amixer sset Master 5%+"
+        ", XF86AudioLowerVolume, exec, amixer sset Master 5%-"
+        ", XF86AudioMute, exec, pw-volume mute toggle"
+        ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
         ", Print, exec, grim -g \"$(slurp -d)\" - | wl-copy --type image/png"
         "SHIFT, Print, exec, pushd ~/Downloads/ ; grim -g \"$(slurp -d)\" ; popd"
 

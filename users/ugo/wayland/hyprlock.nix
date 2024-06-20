@@ -1,11 +1,11 @@
 {inputs, config, ...}:
 
 {
-  # wayland.windowManager.hyprland = {
-  #   settings = {
-  #     bind = [ "$mainMod SHIFT, E, exec, hyprlock" ];
-  #   };
-  # };
+  wayland.windowManager.hyprland = {
+    settings = {
+      bind = [ "$mainMod , L, exec, hyprlock" ];
+    };
+  };
 
   programs.hyprlock = {
     enable = true;
@@ -58,7 +58,7 @@
 
         position = {
           x = 0;
-          y = 80;
+          y = 0;
         };
 
         valign = "center";
