@@ -41,6 +41,7 @@
 
   home.packages = with pkgs; [
     bat
+    brave
     brightnessctl
     cowsay
     element-desktop
