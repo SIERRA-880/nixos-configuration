@@ -61,6 +61,7 @@
     pavucontrol
     pdfarranger
     prusa-slicer
+    podman-compose
     python3
     pw-volume
     qbittorrent
