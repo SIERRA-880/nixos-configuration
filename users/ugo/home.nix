@@ -49,6 +49,7 @@
     firefox
     flameshot
     freecad
+    gcc
     gimp
     gparted
     inkscape
@@ -61,6 +62,8 @@
     pavucontrol
     pdfarranger
     prusa-slicer
+    jetbrains.pycharm-professional
+    ollama
     python3
     pw-volume
     qbittorrent
@@ -68,6 +71,7 @@
     sshfs
     signal-desktop
     terraform
+    tesseract
     texlive.combined.scheme-full
     tldr
     trash-cli
