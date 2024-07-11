@@ -64,6 +64,7 @@
     prusa-slicer
     jetbrains.pycharm-professional
     ollama
+    podman-compose
     python3
     pw-volume
     qbittorrent
