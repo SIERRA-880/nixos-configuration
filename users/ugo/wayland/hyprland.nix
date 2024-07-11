@@ -6,6 +6,7 @@
     xwayland.enable = true;
 
     settings = {
+      # monitor=",preferred,auto,1,mirror, eDP-1";
       monitor=",preferred,auto,1";
 
       exec-once = [
