@@ -48,7 +48,7 @@
     feh
     firefox
     flameshot
-    freecad
+    # freecad
     gimp
     gparted
     inkscape
@@ -56,8 +56,8 @@
     # logseq
     neovim
     nixos-generators
-    openscad
-    openstackclient
+    # openscad
+    # openstackclient
     pavucontrol
     pdfarranger
     prusa-slicer

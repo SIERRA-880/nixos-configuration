@@ -3,7 +3,6 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
       ./programs/syncthing.nix
       ./programs/tlp.nix
     ];

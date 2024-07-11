@@ -14,10 +14,19 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./system/configuration.nix
+        ./system/laptop-hardware-configuration.nix
+        inputs.home-manager.nixosModules.default
+      ];
+    };
+    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./system/configuration.nix
+        ./system/desktop-hardware-configuration.nix
         inputs.home-manager.nixosModules.default
       ];
     };
