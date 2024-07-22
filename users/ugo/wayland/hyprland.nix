@@ -75,12 +75,12 @@
         preserve_split = true;
       };
 
-      master = { new_is_master = true; };
+      master = { new_status = "master"; };
 
       gestures = { workspace_swipe = false; };
 
       "$mainMod" = "SUPER";
-      
+
       bind = [
         "$mainMod, Q, killactive"
         "$mainMod, F, fullscreen"
@@ -117,7 +117,7 @@
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
-      
+
       ];
     };
   };
