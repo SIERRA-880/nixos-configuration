@@ -48,7 +48,7 @@
     feh
     firefox
     flameshot
-    # freecad
+    freecad
     gcc
     gimp
     gparted
