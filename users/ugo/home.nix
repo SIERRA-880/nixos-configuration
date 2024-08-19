@@ -71,6 +71,7 @@
     rpi-imager
     sshfs
     signal-desktop
+    teamspeak_client
     terraform
     tesseract
     texlive.combined.scheme-full
