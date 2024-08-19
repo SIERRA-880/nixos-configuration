@@ -7,7 +7,11 @@
 
     settings = {
       # monitor=",preferred,auto,1,mirror, eDP-1";
-      monitor=",preferred,auto,1";
+      monitor = [
+        ",preferred,auto,1"
+        "DP-4,preferred,1920x420,1"
+        "DP-3,preferred,0x0,1,transform,1"
+      ];
 
       exec-once = [
         "waybar"
@@ -118,6 +122,11 @@
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
 
+      ];
+
+      bindl = [
+        ",switch:on:Lid Switch,exec,hyprctl keyword monitor \"eDP-1, disable\""
+        ",switch:off:Lid Switch,exec,hyprctl keyword monitor \"eDP-1, preffered, auto, 1\""
       ];
     };
   };
