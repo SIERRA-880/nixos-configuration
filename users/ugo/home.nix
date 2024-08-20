@@ -44,7 +44,6 @@
     brave
     brightnessctl
     cowsay
-    element-desktop
     feh
     firefox
     flameshot
@@ -54,11 +53,8 @@
     gparted
     inkscape
     libreoffice
-    # logseq
     neovim
     nixos-generators
-    # openscad
-    # openstackclient
     pavucontrol
     pdfarranger
     prusa-slicer
