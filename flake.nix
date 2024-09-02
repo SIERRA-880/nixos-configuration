@@ -13,21 +13,23 @@
     ags.url = "github:Aylur/ags";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
         ./system/configuration.nix
         ./system/laptop-hardware-configuration.nix
-        inputs.home-manager.nixosModules.default
+        home-manager.nixosModules.default
       ];
     };
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
         ./system/configuration.nix
         ./system/desktop-hardware-configuration.nix
-        inputs.home-manager.nixosModules.default
+        home-manager.nixosModules.default
       ];
     };
   };
