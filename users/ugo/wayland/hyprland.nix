@@ -5,7 +5,7 @@ let
         name = "hyprland-0_41_2";
         url = "https://github.com/NixOS/nixpkgs/";
         ref = "refs/heads/nixpkgs-unstable";
-        rev = "67b4bf1df4ae54d6866d78ccbd1ac7e8a8db8b73";
+        rev = "0c19708cf035f50d28eb4b2b8e7a79d4dc52f6bb";
     }) {inherit (pkgs) system;};
 
     hypr-0_41_2 = pkgs-hypr.hyprland;
@@ -15,7 +15,7 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = hypr-0_41_2;
+    # package = hypr-0_41_2;
 
     settings = {
       # monitor=",preferred,auto,1,mirror, eDP-1";
