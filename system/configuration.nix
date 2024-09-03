@@ -4,8 +4,15 @@
   imports =
     [
       ./programs/syncthing.nix
-      ./programs/tlp.nix
+      # DISABLED FOR GNOME
+      # ./programs/tlp.nix
     ];
+
+    services.xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
+    };
 
   # Nix flakes
   nix.package = pkgs.nixFlakes;
@@ -34,15 +41,16 @@
   #   xkbVariant = "euro";
   # };
 
-  # Enable Hyprland desktop manager
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  # # Enable Hyprland desktop manager
+  # programs.hyprland = {
+  #   enable = true;
+  #   xwayland.enable = true;
+  # };
 
+  # DISABLED FOR GNOME
   # Enable desktop portal
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk];
+  # xdg.portal.enable = true;
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk];
 
   services.tailscale.enable = true;
 
@@ -80,13 +88,14 @@
 
   security.rtkit.enable = true;
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
+  # DISABLED FOR GNOME
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   pulse.enable = true;
+  #   jack.enable = true;
+  # };
 
   # Enable bluetooth support and blueman-applet
   hardware.bluetooth.enable = true;

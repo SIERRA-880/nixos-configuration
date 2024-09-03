@@ -2,12 +2,12 @@
 
 {
   imports = [
-    ./wayland/hyprland.nix
-    ./wayland/waybar.nix
-    ./wayland/wofi.nix
-    ./wayland/hyprlock.nix
-    ./wayland/hypridle.nix
-    ./wayland/hyprpaper/hyprpaper.nix
+    # ./wayland/hyprland.nix
+    # ./wayland/waybar.nix
+    # ./wayland/wofi.nix
+    # ./wayland/hyprlock.nix
+    # ./wayland/hypridle.nix
+    # ./wayland/hyprpaper/hyprpaper.nix
     ./wayland/ags/ags.nix
 
     ./programs/kitty.nix
@@ -58,7 +58,6 @@
     pavucontrol
     pdfarranger
     prusa-slicer
-    jetbrains.pycharm-professional
     ollama
     podman-compose
     python3
