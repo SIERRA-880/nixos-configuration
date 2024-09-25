@@ -12,7 +12,7 @@
     font = {
       name = "JetBrainsMono Nerd Font";
     };
-    theme = "Gruvbox Dark Soft";
+    themeFile = "gruvbox-dark-soft";
     settings = {
       confirm_os_window_close = 0;
       copy_on_select = "yes";
