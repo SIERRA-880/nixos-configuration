@@ -52,6 +52,7 @@
     gimp
     gparted
     inkscape
+    kicad
     libreoffice
     neovim
     nixos-generators
