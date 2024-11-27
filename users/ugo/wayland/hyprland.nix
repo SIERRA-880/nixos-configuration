@@ -21,8 +21,8 @@ in
       # monitor=",preferred,auto,1,mirror, eDP-1";
       monitor = [
         ",preferred,auto,1"
-        "DP-4,preferred,1920x420,1"
-        "DP-3,preferred,0x0,1,transform,1"
+        # "DP-4,preferred,1920x420,1"
+        # "DP-3,preferred,0x0,1,transform,1"
       ];
 
       exec-once = [
