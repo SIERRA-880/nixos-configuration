@@ -102,6 +102,8 @@ in
         "$mainMod, F, fullscreen"
         "$mainMod, Return, exec, wofi"
 
+        "$mainMod, Space, exec, hyprctl dispatch togglefloating"
+
         ", XF86AudioRaiseVolume, exec, amixer sset Master 5%+"
         ", XF86AudioLowerVolume, exec, amixer sset Master 5%-"
         ", XF86AudioMute, exec, pw-volume mute toggle"
