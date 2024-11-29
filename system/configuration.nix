@@ -105,7 +105,8 @@
     grim
     kitty
     neofetch
-    nodejs
+    nixd
+    # nodejs
     polkit_gnome
     ripgrep
     slurp
